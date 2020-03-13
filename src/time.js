@@ -1,6 +1,6 @@
 import cx from 'classnames';
 import React, { Component } from 'react';
-import InputSlider from 'react-input-slider';
+// import InputSlider from 'react-input-slider';
 
 export default class extends Component {
   changeHours = pos => {
@@ -28,23 +28,23 @@ export default class extends Component {
 
         <div className="sliders">
           <div className="time-text">Hours:</div>
-          <InputSlider
+          {/* <InputSlider
             className="u-slider-time"
             xmin={0}
             xmax={23}
             xstep={this.props.hourStep}
             x={m.hour()}
             onChange={this.changeHours}
-          />
+          /> */}
           <div className="time-text">Minutes:</div>
-          <InputSlider
+          {/* <InputSlider
             className="u-slider-time"
             xmin={0}
             xmax={59}
             xstep={this.props.minStep}
             x={m.minute()}
             onChange={this.changeMinutes}
-          />
+          /> */}
         </div>
       </div>
     );
