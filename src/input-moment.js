@@ -1,5 +1,4 @@
 import cx from 'classnames';
-import moment from 'moment';
 import React, { Component } from 'react';
 import Calendar from './calendar';
 import Time from './time';
@@ -24,6 +23,14 @@ export default class InputMoment extends Component {
     };
 
     this.onMonthChange = this.onMonthChange.bind(this);
+  }
+
+  componentDidUpdate(prevprops) {    
+    if (prevprops.moment && this.props.moment && prevprops.moment.format() !== this.props.moment.format()) {
+      this.setState({
+        m: this.props.moment.clone()
+      });
+    }
   }
 
   handleSave = e => {
